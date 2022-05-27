@@ -21,7 +21,6 @@ class CarController extends Controller<Car> {
     res: Response<Car | ResponseError>,
   ): Promise<typeof res> => {
     const { body } = req;
-    console.log(body);
     try {
       const newCar = await this.service.create(body);
       if (!newCar) {
