@@ -67,7 +67,6 @@ class CarController extends Controller<Car> {
         return res.status(400).json({ error: messageError });
       }
       const car = await this.service.update(id, body);
-      console.log(car);
       return car
         ? res.json(car)
         : res.status(404).json({ error: this.errors.notFound });
